@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     public var defaultViewModel: DefaultViewModel?
@@ -14,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-//        makeHealthDefaultReadinessCall()
+        makeHealthDefaultReadinessCall()
         makeHealthDefaultLivenessCall()
     }
 
@@ -34,18 +35,17 @@ class ViewController: UIViewController {
     }
     
     func makeHealthDefaultLivenessCall(){
-        APICaller.shared.getHealthDefaultLivenessStatus { result in
-            switch result {
-            case .success(let status):
-                if status == "ok"{
-                    print("\(status) here")
-                } else {
-                    print("\(status) here")
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        DefaultViewModel().getAPIData(param: [:]) { response, error in
+            print(response?.status as Any, error as Any)
         }
+        
+//        AF.request("https://vfind248958859405.verifyme.ng/health/readiness", method: .get).responseDecodable(of: DefaultAPIResponseModel.self,completionHandler: { Default in
+//            print(Default)
+//        })
+//
+//        AF.request("https://vfind248958859405.verifyme.ng/health/readiness").responseString { response in
+//            print("Response: \(response.value)")
+//        }
     }
 
 }

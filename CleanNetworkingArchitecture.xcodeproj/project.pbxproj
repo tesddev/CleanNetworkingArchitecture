@@ -13,7 +13,17 @@
 		82335EA52870716800090B8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82335EA32870716800090B8B /* Main.storyboard */; };
 		82335EA72870716A00090B8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82335EA62870716A00090B8B /* Assets.xcassets */; };
 		82335EAA2870716A00090B8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82335EA82870716A00090B8B /* LaunchScreen.storyboard */; };
-		82335EB22870722E00090B8B /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = 82335EB12870722E00090B8B /* Networking */; };
+		82335EB92870847A00090B8B /* DefaultAPIResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EB82870847A00090B8B /* DefaultAPIResponseModel.swift */; };
+		82335EBB287084BC00090B8B /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EBA287084BC00090B8B /* DefaultViewModel.swift */; };
+		82335EC52870854200090B8B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EBD2870854200090B8B /* Constants.swift */; };
+		82335EC62870854200090B8B /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EBE2870854200090B8B /* APIPath.swift */; };
+		82335EC72870854200090B8B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EBF2870854200090B8B /* Observable.swift */; };
+		82335EC82870854200090B8B /* APILoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC02870854200090B8B /* APILoader.swift */; };
+		82335EC92870854200090B8B /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC12870854200090B8B /* APIHandler.swift */; };
+		82335ECA2870854200090B8B /* RequestHandler+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC22870854200090B8B /* RequestHandler+Extension.swift */; };
+		82335ECB2870854200090B8B /* ResponseHandler+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC32870854200090B8B /* ResponseHandler+Extension.swift */; };
+		82335ECC2870854200090B8B /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC42870854200090B8B /* APIEnvironment.swift */; };
+		82335ECE287085A600090B8B /* DefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ECD287085A600090B8B /* DefaultAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +35,17 @@
 		82335EA62870716A00090B8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82335EA92870716A00090B8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82335EAB2870716A00090B8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82335EB12870722E00090B8B /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
+		82335EB82870847A00090B8B /* DefaultAPIResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAPIResponseModel.swift; sourceTree = "<group>"; };
+		82335EBA287084BC00090B8B /* DefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
+		82335EBD2870854200090B8B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		82335EBE2870854200090B8B /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		82335EBF2870854200090B8B /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		82335EC02870854200090B8B /* APILoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILoader.swift; sourceTree = "<group>"; };
+		82335EC12870854200090B8B /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		82335EC22870854200090B8B /* RequestHandler+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestHandler+Extension.swift"; sourceTree = "<group>"; };
+		82335EC32870854200090B8B /* ResponseHandler+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResponseHandler+Extension.swift"; sourceTree = "<group>"; };
+		82335EC42870854200090B8B /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		82335ECD287085A600090B8B /* DefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +78,8 @@
 		82335E9C2870716800090B8B /* CleanNetworkingArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				82335EB12870722E00090B8B /* Networking */,
+				82335EBC2870853300090B8B /* Network */,
+				82335EB72870845600090B8B /* DefaultModels */,
 				82335E9D2870716800090B8B /* AppDelegate.swift */,
 				82335E9F2870716800090B8B /* SceneDelegate.swift */,
 				82335EA12870716800090B8B /* ViewController.swift */,
@@ -68,6 +89,31 @@
 				82335EAB2870716A00090B8B /* Info.plist */,
 			);
 			path = CleanNetworkingArchitecture;
+			sourceTree = "<group>";
+		};
+		82335EB72870845600090B8B /* DefaultModels */ = {
+			isa = PBXGroup;
+			children = (
+				82335EB82870847A00090B8B /* DefaultAPIResponseModel.swift */,
+				82335EBA287084BC00090B8B /* DefaultViewModel.swift */,
+			);
+			path = DefaultModels;
+			sourceTree = "<group>";
+		};
+		82335EBC2870853300090B8B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				82335EC42870854200090B8B /* APIEnvironment.swift */,
+				82335EC12870854200090B8B /* APIHandler.swift */,
+				82335EC02870854200090B8B /* APILoader.swift */,
+				82335EBE2870854200090B8B /* APIPath.swift */,
+				82335EBD2870854200090B8B /* Constants.swift */,
+				82335EBF2870854200090B8B /* Observable.swift */,
+				82335EC22870854200090B8B /* RequestHandler+Extension.swift */,
+				82335EC32870854200090B8B /* ResponseHandler+Extension.swift */,
+				82335ECD287085A600090B8B /* DefaultAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +176,6 @@
 			files = (
 				82335EAA2870716A00090B8B /* LaunchScreen.storyboard in Resources */,
 				82335EA72870716A00090B8B /* Assets.xcassets in Resources */,
-				82335EB22870722E00090B8B /* Networking in Resources */,
 				82335EA52870716800090B8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,9 +187,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82335EC72870854200090B8B /* Observable.swift in Sources */,
 				82335EA22870716800090B8B /* ViewController.swift in Sources */,
+				82335EC82870854200090B8B /* APILoader.swift in Sources */,
+				82335ECB2870854200090B8B /* ResponseHandler+Extension.swift in Sources */,
+				82335ECA2870854200090B8B /* RequestHandler+Extension.swift in Sources */,
+				82335EB92870847A00090B8B /* DefaultAPIResponseModel.swift in Sources */,
 				82335E9E2870716800090B8B /* AppDelegate.swift in Sources */,
+				82335EBB287084BC00090B8B /* DefaultViewModel.swift in Sources */,
+				82335ECE287085A600090B8B /* DefaultAPI.swift in Sources */,
+				82335EC62870854200090B8B /* APIPath.swift in Sources */,
+				82335EC92870854200090B8B /* APIHandler.swift in Sources */,
 				82335EA02870716800090B8B /* SceneDelegate.swift in Sources */,
+				82335ECC2870854200090B8B /* APIEnvironment.swift in Sources */,
+				82335EC52870854200090B8B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

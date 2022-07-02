@@ -19,8 +19,6 @@ let baseURL = APIEnvironment.live.baseURL()
 
 struct APIPath {
     var defaultPath: String { return "\(baseURL)/health/readiness"}
-    
-
 }
 
 

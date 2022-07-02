@@ -9,7 +9,7 @@
 import Foundation
 // MARK: Response Handler - parse default
 
-struct ServiceError: Error,Codable {
+struct ServiceError: Swift.Error,Codable {
     let httpStatus: Int
     let message: String
 }

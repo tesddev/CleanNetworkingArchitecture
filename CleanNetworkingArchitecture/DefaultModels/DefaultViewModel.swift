@@ -10,7 +10,7 @@ import Foundation
 struct DefaultViewModel {
     func getAPIData(param: [String: Any], completion: @escaping (DefaultAPIResponseModel?, ServiceError?) -> ()) {
         let request = DefaultAPI()
-        
+
         let apiLoader = APILoader(apiHandler: request)
         apiLoader.loadAPIRequest(requestData: param) { (model, error) in
             if let _ = error {

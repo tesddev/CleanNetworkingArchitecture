@@ -5,12 +5,11 @@
 //  Created by richa on 15/12/20.
 //  Copyright © 2020 harsivo. All rights reserved.
 //
-//"https://api.unsplash.com/search/photos?client_id=JYRARXHZnEcTwGYa1sTS8mpR7WebBsH4Yn9Knsc-eAo&page=1&query=dog"
+//"https://vfind248958859405.verifyme.ng"
 import Foundation
 enum APIEnvironment {
-    case development
-    case staging
-    case production
+    case test
+    case live
     
     func baseURL () -> String {
         return "https://\(subdomain()).\(domain())"
@@ -18,23 +17,21 @@ enum APIEnvironment {
     
     func domain() -> String {
         switch self {
-        case .development:
-            return "unsplash.com"
-        case .staging:
-            return "unsplash.com"
-        case .production:
-            return "unsplash.com"
+        case .test:
+            return "verifyme.ng"
+        case .live:
+            return "verifyme.ng"
         }
     }
     
     func subdomain() -> String {
         switch self {
-        case .development, .production, .staging:
-            return "api"
+        case .test, .live:
+            return "vfind248958859405"
         }
     }
     
-    func route() -> String {
-        return "/api/v1"
-    }
+//    func route() -> String {
+//        return "/api/v1"
+//    }
 }

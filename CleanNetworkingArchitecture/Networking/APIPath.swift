@@ -9,16 +9,17 @@
 import Foundation
 
 
-#if DEBUG
-let environment = APIEnvironment.development
-#else
-let environment = APIEnvironment.production
-#endif
+//#if DEBUG
+//let environment = APIEnvironment.test
+//#else
+//let environment = APIEnvironment.live
+//#endif
 
-let baseURL = environment.baseURL()
+let baseURL = APIEnvironment.live.baseURL()
 
 struct APIPath {
-    var gallary: String { return "\(baseURL)/search/photos"}
+    var defaultPath: String { return "\(baseURL)/health/readiness"}
+    
 
 }
 

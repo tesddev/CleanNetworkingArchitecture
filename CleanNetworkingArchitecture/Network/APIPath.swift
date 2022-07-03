@@ -19,6 +19,7 @@ let baseURL = APIEnvironment.live.baseURL()
 
 struct APIPath {
     var defaultPath: String { return "\(baseURL)/health/readiness"}
+    var authPath: String { return "\(baseURL)/token"}
 }
 
 

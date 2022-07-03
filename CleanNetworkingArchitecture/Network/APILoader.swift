@@ -41,8 +41,6 @@ struct APILoader<T: APIHandler> {
                     }
                     
                 }
-                
-               
             }.resume()
         }
     }

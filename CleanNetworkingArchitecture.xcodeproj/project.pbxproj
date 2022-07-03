@@ -26,7 +26,9 @@
 		82335ECC2870854200090B8B /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335EC42870854200090B8B /* APIEnvironment.swift */; };
 		82335ECE287085A600090B8B /* DefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ECD287085A600090B8B /* DefaultAPI.swift */; };
 		82335ED128708F4B00090B8B /* APICallers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ED028708F4B00090B8B /* APICallers.swift */; };
-		82335ED32870B2BA00090B8B /* LivenessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ED22870B2BA00090B8B /* LivenessModel.swift */; };
+		82335ED6287104CD00090B8B /* AuthResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ED5287104CD00090B8B /* AuthResponseModel.swift */; };
+		82335ED8287105CC00090B8B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ED7287105CC00090B8B /* AuthViewModel.swift */; };
+		82335EDA287107CD00090B8B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82335ED9287107CC00090B8B /* AuthAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +53,9 @@
 		82335EC42870854200090B8B /* APIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		82335ECD287085A600090B8B /* DefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAPI.swift; sourceTree = "<group>"; };
 		82335ED028708F4B00090B8B /* APICallers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallers.swift; sourceTree = "<group>"; };
-		82335ED22870B2BA00090B8B /* LivenessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivenessModel.swift; sourceTree = "<group>"; };
+		82335ED5287104CD00090B8B /* AuthResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseModel.swift; sourceTree = "<group>"; };
+		82335ED7287105CC00090B8B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		82335ED9287107CC00090B8B /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		9DAB1350726B600E157F11EB /* Pods_CleanNetworkingArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanNetworkingArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA6CB28B54B690643755E4F /* Pods-CleanNetworkingArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanNetworkingArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-CleanNetworkingArchitecture/Pods-CleanNetworkingArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +93,7 @@
 		82335E9C2870716800090B8B /* CleanNetworkingArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				82335ED42871049500090B8B /* AuthModels */,
 				82335ECF28708F3C00090B8B /* Managers */,
 				82335EBC2870853300090B8B /* Network */,
 				82335EB72870845600090B8B /* DefaultModels */,
@@ -106,9 +111,9 @@
 		82335EB72870845600090B8B /* DefaultModels */ = {
 			isa = PBXGroup;
 			children = (
+				82335ECD287085A600090B8B /* DefaultAPI.swift */,
 				82335EB82870847A00090B8B /* DefaultAPIResponseModel.swift */,
 				82335EBA287084BC00090B8B /* DefaultViewModel.swift */,
-				82335ED22870B2BA00090B8B /* LivenessModel.swift */,
 			);
 			path = DefaultModels;
 			sourceTree = "<group>";
@@ -124,7 +129,6 @@
 				82335EBF2870854200090B8B /* Observable.swift */,
 				82335EC22870854200090B8B /* RequestHandler+Extension.swift */,
 				82335EC32870854200090B8B /* ResponseHandler+Extension.swift */,
-				82335ECD287085A600090B8B /* DefaultAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -137,13 +141,22 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		82335ED42871049500090B8B /* AuthModels */ = {
+			isa = PBXGroup;
+			children = (
+				82335ED5287104CD00090B8B /* AuthResponseModel.swift */,
+				82335ED7287105CC00090B8B /* AuthViewModel.swift */,
+				82335ED9287107CC00090B8B /* AuthAPI.swift */,
+			);
+			path = AuthModels;
+			sourceTree = "<group>";
+		};
 		ACCD789F39E84E3BE93742E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				EBA6CB28B54B690643755E4F /* Pods-CleanNetworkingArchitecture.debug.xcconfig */,
 				31602012E9DD3DCBF224ECFA /* Pods-CleanNetworkingArchitecture.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -274,17 +287,19 @@
 				82335EA22870716800090B8B /* ViewController.swift in Sources */,
 				82335EC82870854200090B8B /* APILoader.swift in Sources */,
 				82335ECB2870854200090B8B /* ResponseHandler+Extension.swift in Sources */,
+				82335ED6287104CD00090B8B /* AuthResponseModel.swift in Sources */,
 				82335ECA2870854200090B8B /* RequestHandler+Extension.swift in Sources */,
 				82335EB92870847A00090B8B /* DefaultAPIResponseModel.swift in Sources */,
+				82335ED8287105CC00090B8B /* AuthViewModel.swift in Sources */,
 				82335E9E2870716800090B8B /* AppDelegate.swift in Sources */,
 				82335ED128708F4B00090B8B /* APICallers.swift in Sources */,
-				82335ED32870B2BA00090B8B /* LivenessModel.swift in Sources */,
 				82335EBB287084BC00090B8B /* DefaultViewModel.swift in Sources */,
 				82335ECE287085A600090B8B /* DefaultAPI.swift in Sources */,
 				82335EC62870854200090B8B /* APIPath.swift in Sources */,
 				82335EC92870854200090B8B /* APIHandler.swift in Sources */,
 				82335EA02870716800090B8B /* SceneDelegate.swift in Sources */,
 				82335ECC2870854200090B8B /* APIEnvironment.swift in Sources */,
+				82335EDA287107CD00090B8B /* AuthAPI.swift in Sources */,
 				82335EC52870854200090B8B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

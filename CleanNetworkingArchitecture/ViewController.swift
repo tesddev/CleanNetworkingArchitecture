@@ -8,6 +8,10 @@
 import UIKit
 import Alamofire
 
+struct AuthModel {
+    let accessToken, expiresIn, tokenType: String
+}
+
 class ViewController: UIViewController {
     public var defaultViewModel: DefaultViewModel?
     private var dataSource: DefaultAPIResponseModel?
@@ -15,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        makeHealthDefaultReadinessCall()
+//        makeHealthDefaultReadinessCall()
         makeHealthDefaultLivenessCall()
     }
 
@@ -38,14 +42,28 @@ class ViewController: UIViewController {
         DefaultViewModel().getAPIData(param: [:]) { response, error in
             print(response?.status as Any, error as Any)
         }
-        
-//        AF.request("https://vfind248958859405.verifyme.ng/health/readiness", method: .get).responseDecodable(of: DefaultAPIResponseModel.self,completionHandler: { Default in
-//            print(Default)
-//        })
-//
-//        AF.request("https://vfind248958859405.verifyme.ng/health/readiness").responseString { response in
-//            print("Response: \(response.value)")
-//        }
+    }
+    
+    func getAuthUsingNSURL() {
+        APICaller.shared.getAuthStatus { result in
+            switch result{
+            case .success(let res):
+                print(res.accessToken)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAuthUsingAF() {
+        APICaller.shared.getAuthStatusWithAF { result in
+            switch result{
+            case .success(let res):
+                print(res.accessToken)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
 }

@@ -23,7 +23,7 @@ struct AuthAPI: APIHandler {
         return nil
     }
     
-    func parseResponse(data: Data, response: HTTPURLResponse) throws -> DefaultAPIResponseModel {
+    func parseResponse(data: Data, response: HTTPURLResponse) throws -> AuthResponseModel {
         return try defaultParseResponse(data: data,response: response)
     }
 }
